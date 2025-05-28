@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRASH GAMEx</title>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #0f0f0f, #000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2), 0 0 50px rgba(255, 0, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+      animation: pop 1.2s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    dotlottie-player {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 25px #ff00ff);
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px #ff00ff80;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffff80; }
+      to { text-shadow: 0 0 30px #ff00ff; }
+    }
+
+    .typing {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      color: #ccc;
+      min-height: 24px;
+      animation: fadein 1s ease-in-out;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 15px;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      dotlottie-player {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .glow-circle {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #00ffff60, transparent 70%);
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(50px);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translate(-50%, -10px); }
+      50% { transform: translate(-50%, 10px); }
+      100% { transform: translate(-50%, -10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-circle"></div>
+  <div class="card">
+    <dotlottie-player src="https://lottie.host/246ce1bf-a7f6-40a3-af1a-435f8b4faede/qLFzjDWmVU.lottie"
+      background="transparent" speed="1" loop autoplay></dotlottie-player>
+
+    <div class="title">CrushMaster Signal</div>
+    <div class="typing" id="typing-text"></div>
+  </div>
+
+  <script>
+    const messages = [
+      "Service Updated...",
+      "Data Loading...",
+      "Connection Loading...",
+      "Preparing Interface..."
+    ];
+    let index = 0;
+    const typingDiv = document.getElementById('typing-text');
+
+    function showMessage() {
+      if (index < messages.length) {
+        typingDiv.textContent = messages[index];
+        index++;
+        setTimeout(showMessage, 1000);
+      }
+    }
+
+    showMessage();
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 6000);
+  </script>
+</body>
+</html>

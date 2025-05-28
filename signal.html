@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>প্রিমিয়াম হেডার</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(45deg, #111, #222);
+      padding: 12px 20px;
+      box-shadow: 0 4px 20px rgba(0, 255, 170, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+      border-radius: 10px;
+    }
+
+    .logo-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #00ffd5, #00ffa1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: #1a1a1a;
+      border: 1px solid #00ffc8;
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      min-width: 160px;
+    }
+
+    .dropdown a, .dropdown button {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #fff;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .dropdown a:hover, .dropdown button:hover {
+      background-color: #00ffc82a;
+    }
+
+    /* Popup Styles */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #00ffc8;
+      max-width: 90%;
+    }
+
+    .popup-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .popup-buttons button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .yes-btn {
+      background: #00ffc8;
+      color: #000;
+    }
+
+    .no-btn {
+      background: #444;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .logo-name {
+        font-size: 1.1rem;
+      }
+      .menu-icon {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/d1grpdCf/file-00000000a30061f88099ff75487f2a40.png" alt="logo" />
+    <div class="logo-name">CrushMaster Signal</div>
+  </div>
+  <div class="menu">
+    <span class="material-symbols-outlined menu-icon" onclick="toggleDropdown()">menu</span>
+    <div class="dropdown" id="dropdownMenu">
+      <a href="https://t.me/Rashesull19">Support</a>
+      <button onclick="showPopup()">Developer Info</button>
+    </div>
+  </div>
+</header>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p>এই ওয়েবসাইটের সাথে Developer Swygen এর কোন প্রকার সম্পর্ক নেই। আপনি যদি এইরকম ওয়েবসাইট বা এপস তৈরি করতে চান তাহলে Developer এর সাথে যোগাযোগ করুন।</p>
+    <div class="popup-buttons">
+      <button class="yes-btn" onclick="window.location.href='https://t.me/Swygen_bd'">Yes</button>
+      <button class="no-btn" onclick="closePopup()">No</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("dropdownMenu").style.display = "none";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Optional: Close dropdown if clicked outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.menu-icon')) {
+      document.getElementById("dropdownMenu").style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
+<div class="casino-container">
+  <img src="https://i.postimg.cc/x8y85b3M/images-13.jpg" alt="Casino Game" class="casino-image">
+  <h1 class="casino-text">Select Your Casino Game Aviator Official</h1>
+</div>
+
+<style>
+/* Main container styling */
+.casino-container {
+  background: transparent;
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Image Styling */
+.casino-image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium animated text */
+.casino-text {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffcc00, #ffffff, #ffcc00);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 3s linear infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Shining animation */
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .casino-text {
+    font-size: 18px;
+  }
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aviator Game Live Signal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <style>
+    body {
+      background: #121212;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .signal-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: linear-gradient(145deg, #1f1f1f, #2c2c2c);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 0, 128, 0.4);
+      color: #fff;
+      text-align: center;
+    }
+    .signal-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ff0055;
+      text-shadow: 0 0 5px #ff0077;
+    }
+    .signal-box, .status-box, .time-box {
+      margin: 15px 0;
+      padding: 18px;
+      border-radius: 12px;
+      background: #111;
+      font-size: 18px;
+      font-weight: 500;
+      box-shadow: inset 0 0 10px #000;
+    }
+    .time-box {
+      color: #00ffc3;
+    }
+    .status-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .material-icons-sharp {
+      font-size: 28px;
+    }
+    .win {
+      color: #00ff88;
+    }
+    .loss {
+      color: #ff3d3d;
+    }
+    .pending {
+      color: #ffffffcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="signal-container">
+    <div class="signal-header">Aviator Game Live Signal</div>
+    <div class="signal-box" id="liveMessage">Loading signal...</div>
+    <div class="status-box" id="liveStatus">
+      <span class="material-icons-sharp pending">hourglass_empty</span>
+      <span class="pending">Pending...</span>
+    </div>
+    <div class="time-box">BD Time: <span id="bdTime">--:--:--</span></div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB0aH-0ozCX1ZZjgojjR6GuKWmRJdQkYPU",
+      authDomain: "crush-x-d4170.firebaseapp.com",
+      projectId: "crush-x-d4170",
+      storageBucket: "crush-x-d4170.firebasestorage.app",
+      messagingSenderId: "20528805592",
+      appId: "1:20528805592:web:295ce2e998fbb7049189ad"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const messageBox = document.getElementById("liveMessage");
+    const statusBox = document.getElementById("liveStatus");
+
+    const msgRef = doc(db, "signals", "current");
+
+    onSnapshot(msgRef, (docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        messageBox.textContent = data.message || "No signal available";
+
+        let status = (data.status || "Pending").toLowerCase();
+        let icon = "hourglass_empty";
+        let className = "pending";
+
+        if (status === "win") {
+          icon = "check_circle";
+          className = "win";
+        } else if (status === "loss") {
+          icon = "cancel";
+          className = "loss";
+        }
+
+        statusBox.innerHTML = `
+          <span class="material-icons-sharp ${className}">${icon}</span>
+          <span class="${className}">${status.charAt(0).toUpperCase() + status.slice(1)}</span>
+        `;
+      } else {
+        messageBox.textContent = "No signal found.";
+        statusBox.innerHTML = `<span class="material-icons-sharp">error</span> Not found`;
+      }
+    });
+
+    // Bangladesh time live
+    function updateBDTime() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const bdTime = new Date(utc + (6 * 60 * 60 * 1000));
+      document.getElementById('bdTime').textContent = bdTime.toLocaleTimeString('en-GB');
+    }
+    setInterval(updateBDTime, 1000);
+    updateBDTime();
+  </script>
+</body>
+</html>

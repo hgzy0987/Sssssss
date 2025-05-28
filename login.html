@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Premium Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+    body {
+      height: 100vh;
+      background: linear-gradient(145deg, #010101, #0f0f0f);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 25px rgba(0, 255, 180, 0.3);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      position: relative;
+    }
+    h2 {
+      font-size: 2.2rem;
+      background: linear-gradient(to right, #00fff0, #ff00e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+    }
+    .material-icons {
+      font-size: 32px;
+      color: #00ffee;
+      text-shadow: 0 0 10px #00ffee;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    input::placeholder {
+      color: #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      background: linear-gradient(to right, #00ffc3, #ff009d);
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 255, 200, 0.2);
+      transition: 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.03);
+    }
+    .option-link {
+      display: block;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ccc;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .option-link:hover {
+      color: #fff;
+    }
+    .footer-glow {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #00ffe7 0%, transparent 80%);
+      z-index: -1;
+      opacity: 0.1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="material-icons">lock</span>
+    <h2>CrushMaster Signal</h2>
+    <input type="password" id="password" placeholder="Enter Access Password">
+    <button onclick="checkPassword()">Access Now</button><span class="option-link" onclick="getPassword()">Get Password</span>
+<span class="option-link" onclick="developerInfo()">Developer</span>
+
+<div class="footer-glow"></div>
+
+  </div>  <script>
+    function checkPassword() {
+      const pass = document.getElementById("password").value;
+      if (pass === "34209755R$$") {
+        window.location.href = "signal.html";
+      } else {
+        alert("ভুল পাসওয়ার্ড! অনুগ্রহ করে সঠিক পাসওয়ার্ড দিন।");
+      }
+    }
+
+    function getPassword() {
+      if (confirm("আপনাকে Access Password এর জন্য এডমিন এর সাথে যোগাযোগ করতে হবে।\nযোগাযোগ করতে চান?")) {
+        window.location.href = "https://t.me/Rashesull19";
+      }
+    }
+
+    function developerInfo() {
+      if (confirm("এই ওয়েবসাইটের সাথে Developer Swygen এর কোন প্রকার সম্পর্ক নেই।\nআপনি যদি এইরকম ওয়েবসাইট বা এপস তৈরি করতে চান তাহলে Developer এর সাথে যোগাযোগ করুন।\nযোগাযোগ করতে চান?")) {
+        window.location.href = "https://t.me/Swygen_bd";
+      }
+    }
+  </script></body>
+</html>
